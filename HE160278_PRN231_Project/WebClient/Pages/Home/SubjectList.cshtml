@@ -1,0 +1,53 @@
+﻿@page
+@model WebClient.Pages.Home.SubjectListModel
+@{
+}
+<div id="page" class="container-fluid">
+	<div id="page-content" class="row">
+		<div id="region-main-box" class="col-8">
+			<section id="region-main">
+				<div class="card">
+					<div class="card-body">
+						<span class="notifications" id="user-notifications"></span>
+						<div role="main">
+							<span id="maincontent"></span>
+							<span></span>
+							<form id="coursesearch" asp-page="/Home/Search" method="get">
+								<fieldset class="coursesearchbox invisiblefieldset">
+									<label class="col-4" for="coursesearchbox">Tìm kiếm khoá học: </label>
+									<input class="col-8" type="text" id="coursesearchbox" size="30" name="search" value="" />
+								</fieldset><fieldset class="coursesearchbox invisiblefieldset">
+									<label class="col-4" for="coursesearchbox">Môn học </label>
+									<select class="col-8" id="coursesearchbox" name="code" asp-items="@(new SelectList(Model.Subjects, "Code", "Name"))">
+										<option value="">-- Chọn một môn học --</option>
+									</select>
+								</fieldset>
+								<fieldset class="coursesearchbox invisiblefieldset">
+									<input type="submit" value="Xem" />
+								</fieldset>
+							</form>
+							<div class="course_category_tree clearfix category-browse category-browse-0">
+								<div class="content">
+									<div class="subcategories">
+										@foreach(var sub in Model.Subjects)
+										{
+											<div class="category notloaded with_children collapsed" data-categoryid="44" data-depth="1" data-showcourses="15" data-type="0">
+												<div class="info">
+													<h3 class="categoryname">
+														<a asp-page="/Home/Search" asp-route-code="@sub.Code">@sub.Name</a>
+													</h3>
+												</div>
+											</div>
+
+										}
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

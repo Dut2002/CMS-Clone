@@ -1,0 +1,235 @@
+﻿@page
+@model WebClient.Pages.CourseManager.Section.IndexModel
+@{
+}
+
+<div b-fxb6eae6jp="" id="wrapper">
+	<div b-fxb6eae6jp="" id="page-content-wrapper">
+		<main b-fxb6eae6jp="" role="main">
+
+			<div id="page-content" class="row">
+				<div class="card content-card">
+					<div class="card-body">
+						<span class="notifications" id="user-notifications"></span>
+						<div role="main">
+							<span id="maincontent"></span>
+							<div class="course-content">
+								<div id="completionprogressid" class="completionprogress">
+									@Model.Content.Course.CourseName - @Model.Content.Course.Semester @Model.Content.Course.Year - @Model.Content.Course.Creator - @Model.Content.Course.SubjectName
+								</div>
+								<h2 class="accesshide">Weekly outline</h2><ul class="weeks">
+
+
+									<li id="section-0" class="section main clearfix" role="region" aria-label="General">
+										<span class="sectionname">
+											<h3>Document</h3>
+											<a class="btn btn-primary" asp-page="/CourseManager/DocumentManager/Create" asp-route-contentId="@Model.Content.ContentId">Tạo Mới</a>
+										</span>
+										<div class="left side"></div>
+										<div class="right side">
+											<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+										</div>
+										<div class="content">
+											<h3 class="sectionname accesshide">
+												<span>
+													<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+												</span>
+											</h3><div class="section_availability">
+											</div>
+											<div class="summary"></div>
+											<ul class="section img-text">
+												@if (Model.Content.Documents.Any())
+												{
+													foreach (var doc in Model.Content.Documents)
+													{
+														<li class="activity forum modtype_forum " id="module-134734">
+															<div>
+																<div class="mod-indent-outer">
+																	<div class="mod-indent"></div>
+																	<div>
+																		<div class="activityinstance">
+																			<a href="/CourseManager/DocumentManager/Detail?documentId=@doc.DocumentId">
+																				<img src="https://cmshn.fpt.edu.vn/theme/image.php/trema/forum/1697438386/icon" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true">
+																				<span class="instancename">
+																					@doc.Title
+																					<span class="accesshide "> Forum</span>
+																				</span>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</li>
+													}
+												}
+											</ul>
+										</div>
+									</li>
+
+									<li id="section-1" class="section main clearfix" role="region" aria-label="General">
+										<span class="sectionname">
+											<h3>Link</h3>
+											<a class="btn btn-primary" asp-page="/CourseManager/LinkManager/Create" asp-route-contentId="@Model.Content.ContentId">Tạo Mới</a>
+										</span>
+										<div class="left side"></div>
+										<div class="right side">
+											<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+										</div>
+										<div class="content">
+											<h3 class="sectionname accesshide">
+												<span>
+													<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+												</span>
+											</h3><div class="section_availability">
+											</div>
+											<div class="summary"></div>
+											<ul class="section img-text">
+												@if (Model.Content.Links.Any())
+												{
+													foreach (var link in Model.Content.Links)
+													{
+														<li class="activity url modtype_url " id="module-147940">
+															<div>
+																<div class="mod-indent-outer">
+																	<div class="mod-indent"></div>
+																	<div>
+																		<div class="activityinstance">
+																			<a href="@link.LinkAddress" target="_blank">
+																				<img src="https://cmshn.fpt.edu.vn/theme/image.php/trema/url/1697438386/icon" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true">
+																				<span class="instancename">@link.Title<span class="accesshide "> URL</span></span>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+														</li>
+
+													}
+
+												}
+
+											</ul>
+										</div>
+									</li>
+
+									<li id="section-2" class="section main clearfix" role="region" aria-label="General">
+										<span class="sectionname">
+											<h3>DownloadFile</h3>
+											<a class="btn btn-primary" asp-page="/CourseManager/DownloadFileManager/Create" asp-route-contentId="@Model.Content.ContentId">Tạo Mới</a>
+										</span>
+										<div class="left side"></div>
+										<div class="right side">
+											<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+										</div>
+										<div class="content">
+											<h3 class="sectionname accesshide">
+												<span>
+													<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+												</span>
+											</h3><div class="section_availability">
+											</div>
+											<div class="summary"></div>
+											<ul class="section img-text">
+												@if (Model.Content.DownloadFiles.Any())
+												{
+													@foreach (var file in Model.Content.DownloadFiles)
+													{
+														<li class="activity resource modtype_resource " id="module-160613">
+															<div>
+																<div class="mod-indent-outer">
+																	<div class="mod-indent">
+																	</div>
+																	<div>
+																		<div class="activityinstance">
+																			<a class="" onclick="downloadFile(@file.DownloadId)" href="#">
+																				<img src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/f/archive-24" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true">
+																				<span class="instancename">
+																					@file.Title
+																					<span class="accesshide "> File</span>
+																				</span>
+																			</a>
+																		</div>
+																		<span class="actions">
+
+																		</span>
+																	</div>
+																</div>
+															</div>
+														</li>
+
+													}
+
+												}
+
+											</ul>
+										</div>
+									</li>
+
+
+
+
+
+
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+	</div>
+</div>
+
+
+
+<script>
+	var url = 'https://localhost:7081/api/DownLoadFiles/';
+
+	function downloadFile(downloadId) {
+		// Tạo URL gọi đến API
+		var apiUrl = url + 'DownloadFile?downloadId=' + downloadId;
+
+		// Sử dụng Fetch để gửi yêu cầu GET đến API
+		fetch(apiUrl)
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				// Trả về dữ liệu dưới dạng blob
+				return response.blob().then(blob => ({ blob, filename: response.url.split('/').pop() }));
+			})
+			.then(({ blob, filename }) => {
+				// Lấy phần mở rộng của tên file
+				var defaultFilename = 'downloaded_file';
+				var filenameParts = filename.split('.');
+				var extractedFilename = defaultFilename;
+
+				if (filenameParts.length > 1) {
+					extractedFilename = filenameParts.pop();
+				}
+
+				// Tạo một URL từ dữ liệu blob
+				var blobUrl = window.URL.createObjectURL(blob);
+				// Tạo một thẻ a ẩn để tải xuống tệp
+				var a = document.createElement('a');
+				a.href = blobUrl;
+				// Đặt tên tệp tải xuống sử dụng tên file và phần mở rộng
+				a.download = extractedFilename;
+				document.body.appendChild(a);
+				a.click();
+				window.URL.revokeObjectURL(blobUrl); // Giải phóng tài nguyên
+			})
+			.catch(error => {
+				console.error('There was a problem with your fetch operation:', error);
+			});
+
+	}
+</script>
+
+
+
+
+
+

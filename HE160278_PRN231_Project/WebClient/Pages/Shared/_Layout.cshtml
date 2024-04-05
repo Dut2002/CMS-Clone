@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebClient</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/all.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebClient.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" id="yui_3_17_2_1_1710381597647_21">
+
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+
+            <a asp-page="/Index" class="navbar-brand has-logo">
+                <span class="logo d-inline">
+                    <img class="logo-img" src="https://cmshn.fpt.edu.vn/pluginfile.php/1/core_admin/logocompact/0x70/1697438386/2020-FPTU-Eng.png" alt="eLearning">
+                </span>
+            </a>
+
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                <!-- page_heading_menu -->
+
+                @* Hiển thị các khóa học *@
+
+
+
+            </ul>
+
+
+            <ul class="nav navbar-nav ml-auto right-nav">
+
+                <!-- user_menu -->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    var name = User.Identity.Name;
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><span class="login">@name. <a asp-area="Identity" asp-page="/Account/Logout">Đăng xuất</a></span></div>
+                </li>
+                }else{
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><span class="login">Bạn chưa đăng nhập. (<a asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>)</span></div>
+                </li>
+                }
+            </ul>
+            <!-- search_box -->
+        </nav>
+    </header>
+    <div id="wrapper">
+        <div class="overlay"></div>
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse absolute-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li><a asp-page="/Index">Home</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a asp-page="/CourseManager/Index">My Course</a></li>
+                    <li><a asp-page="/Profile/Index">Profile</a></li>
+                }
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+                <main role="main">
+                    @RenderBody()
+                </main>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ 
+@*     <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - WebClient - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer> *@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            var trigger = $('.hamburger'),
+                overlay = $('.overlay'),
+                isClosed = false;
+
+            trigger.click(function () {
+                hamburger_cross();
+            });
+
+            function hamburger_cross() {
+
+                if (isClosed == true) {
+                    overlay.hide();
+                    trigger.removeClass('is-open');
+                    trigger.addClass('is-closed');
+                    isClosed = false;
+                } else {
+                    overlay.show();
+                    trigger.removeClass('is-closed');
+                    trigger.addClass('is-open');
+                    isClosed = true;
+                }
+            }
+
+            $('[data-toggle="offcanvas"]').click(function () {
+                $('#wrapper').toggleClass('toggled');
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

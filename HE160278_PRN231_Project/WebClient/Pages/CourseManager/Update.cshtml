@@ -1,0 +1,134 @@
+﻿@page
+@using WebClient.Models;
+@model WebClient.Pages.CourseManager.UpdateModel
+@{
+}
+
+<div id="page" class="container-fluid">
+	<div id="page-content" class="row">
+		<div id="region-main-box" class="col-12">
+			<section id="region-main">
+				<div class="card">
+					<div class="card-body">
+						<span class="notifications" id="user-notifications"></span>
+						<div role="main">
+							<span id="maincontent"></span><h2>Cập nhật khóa học mới</h2>
+							<form autocomplete="off" asp-page="/CourseManager/Update" method="post" accept-charset="utf-8" id="mform1" class="mform">
+								<div style="display: none;">
+									<input type="hidden" asp-for="Input.CreatorId" />
+									<input type="hidden" asp-for="Input.CourseId" />
+								</div>
+								<fieldset class="clearfix collapsible" id="id_moodle">
+									<legend class="ftoggler"></legend>
+									<div class="fcontainer clearfix">
+										<div id="fitem_id_code" class="form-group row  fitem   ">
+											<div class="col-md-3">
+												<label class="col-form-label d-inline " for="id_maildisplay">
+													Code
+												</label>
+											</div>
+											<div class="col-md-9 form-inline felement" data-fieldtype="select">
+												<select class="custom-select" asp-for="Input.Code" asp-items="@Model.Subjects" id="id_code" required>
+													<option value="">- Chọn môn học -</option>
+												</select>
+												<span class="form-control-feedback text-danger" asp-validation-for="Input.Code" id="id_error_code"></span>
+											</div>
+										</div>
+
+										<div id="fitem_id_coursename" class="form-group row  fitem   ">
+											<div class="col-md-3">
+												<span class="float-sm-right text-nowrap">
+													<abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="Required" aria-label="Required"></i></abbr>
+												</span>
+												<label class="col-form-label d-inline " for="id_coursenam">
+													Course Name
+												</label>
+											</div>
+
+											<div class="col-md-9 form-inline felement" data-fieldtype="text">
+												<input type="text"
+													   class="form-control "
+													   id="id_lastname"
+													   asp-for="Input.CourseName"
+													   size="30"
+													   maxlength="100" autocomplete="family-name" required>
+												<span class="form-control-feedback alert-danger" asp-validation-for="Input.CourseName" id="id_error_coursenam"></span>
+											</div>
+										</div>
+
+										<div id="fitem_id_semester" class="form-group row fitem">
+											<div class="col-md-3">
+												<label class="col-form-label d-inline" for="id_semester">
+													Semester
+												</label>
+											</div>
+											<div class="col-md-9 form-inline felement" data-fieldtype="select">
+												<select class="custom-select" id="id_semester" asp-for="Input.Semester" required>
+													<option value="">- Chọn kỳ học -</option>
+													@foreach (var semester in Enum.GetValues(typeof(Semester)))
+													{
+														<option value="@((int)semester)">@semester</option>
+													}
+												</select>
+												<span class="form-control-feedback text-danger" asp-validation-for="Input.Semester" id="id_error_semester"></span>
+											</div>
+										</div>
+
+										<div id="fitem_id_year" class="form-group row fitem">
+											<div class="col-md-3">
+												<span class="float-sm-right text-nowrap">
+													<abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw" title="Required" aria-label="Required"></i></abbr>
+												</span>
+												<label class="col-form-label d-inline" for="id_year">
+													Year
+												</label>
+											</div>
+											<div class="col-md-9 form-inline felement" data-fieldtype="text">
+												<input type="number"
+													   class="form-control"
+													   id="id_year"
+													   asp-for="Input.Year"
+													   min="2024"
+													   max="2030"
+													   autocomplete="off"
+													   required>
+												<span class="form-control-feedback alert-danger" asp-validation-for="Input.Year" id="id_error_year"></span>
+											</div>
+										</div>
+
+									</div>
+								</fieldset>
+								<div id="fgroup_id_buttonar" class="form-group row  fitem femptylabel  " data-groupname="buttonar">
+									<div class="col-md-3">
+										<span class="float-sm-right text-nowrap"></span>
+										<label class="col-form-label d-inline " for="fgroup_id_buttonar"></label>
+									</div>
+									<div class="col-md-9 form-inline felement" data-fieldtype="group">
+
+										<div class="form-group  fitem  ">
+											<label class="col-form-label " for="id_submitbutton"></label>
+											<span data-fieldtype="submit">
+												<input type="submit" class="btn btn-primary" name="submitbutton" id="id_submitbutton" value="Update">
+											</span>
+											<div class="form-control-feedback invalid-feedback" id="id_error_submitbutton"></div>
+										</div>
+
+										<div class="form-group  fitem   btn-cancel">
+											<label class="col-form-label " for="id_cancel"></label>
+											<span data-fieldtype="submit">
+												<input type="reset" class="btn btn-secondary" name="cancel" id="id_cancel" value="Cancel">
+											</span>
+											<div class="form-control-feedback invalid-feedback" id="id_error_cancel"></div>
+										</div>
+										<div class="form-control-feedback invalid-feedback" id="id_error_buttonar">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

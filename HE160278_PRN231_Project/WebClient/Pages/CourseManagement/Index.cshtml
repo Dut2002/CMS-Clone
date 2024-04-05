@@ -1,0 +1,249 @@
+﻿@page
+@model WebClient.Pages.CourseManagement.IndexModel
+@{
+}
+
+@* Duyệt xin vào khóa học *@
+<div b-fxb6eae6jp="" id="wrapper">
+	<div b-fxb6eae6jp="" id="page-content-wrapper">
+		<main b-fxb6eae6jp="" role="main">
+
+			<div id="page-content" class="row">
+				<div class="card content-card">
+					<div class="card-body">
+						<span class="notifications" id="user-notifications"></span>
+						<div role="main">
+							<span id="maincontent"></span>
+							<div class="course-content">
+								<div id="completionprogressid" class="completionprogress">
+									<div>
+										@Model.Course.CourseName
+									</div>
+									<div>
+										<button class="btn btn-primary" onclick="updateAllManagers(@Model.Course.CourseId,true)">Accept All</button>
+										<button class="btn btn-secondary" onclick="updateAllManagers(@Model.Course.CourseId,false)">Reject All</button>
+
+									</div>
+								</div>
+								<h2 class="accesshide">Weekly outline</h2><ul class="weeks">
+									<li id="section-0" class="section main clearfix" role="region" aria-label="General">
+										<span class="sectionname">
+											<h3>Appending</h3>
+										</span>
+										<div class="left side"></div>
+										<div class="right side">
+											<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+										</div>
+										<div class="content">
+											<h3 class="sectionname accesshide">
+												<span>
+													<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+												</span>
+											</h3><div class="section_availability">
+											</div>
+											<div class="summary"></div>
+											<ul class="section img-text" id="appending-manager">
+
+											</ul>
+										</div>
+									</li>
+									<li id="section-0" class="section main clearfix" role="region" aria-label="General">
+										<span class="sectionname">
+											<h3>Accepted</h3>
+										</span>
+										<div class="left side"></div>
+										<div class="right side">
+											<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+										</div>
+										<div class="content">
+											<h3 class="sectionname accesshide">
+												<span>
+													<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+												</span>
+											</h3><div class="section_availability">
+											</div>
+											<div class="summary"></div>
+											<ul class="section img-text" id="accepted-manager">
+												
+											</ul>
+										</div>
+									</li>
+									<li id="section-0" class="section main clearfix" role="region" aria-label="General">
+										<span class="sectionname">
+											<h3>Rejected</h3>
+										</span>
+										<div class="left side"></div>
+										<div class="right side">
+											<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+										</div>
+										<div class="content">
+											<h3 class="sectionname accesshide">
+												<span>
+													<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+												</span>
+											</h3><div class="section_availability">
+											</div>
+											<div class="summary"></div>
+											<ul class="section img-text" id="rejected-manager">
+
+											</ul>
+										</div>
+									</li>
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+	</div>
+</div>
+
+
+<script>
+	var url = "https://localhost:7081/api/CourseManagers/";
+	var courseId = @Model.Course.CourseId;
+
+	function getCourseManagers() {
+		// Thực hiện request AJAX để gọi API GetCourseManagerByCourse
+		fetch(url + 'GetCourseManagerByCourse?courseId=' + courseId)
+			.then(response => {
+				// Kiểm tra xem request có thành công hay không
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				// Trả về dữ liệu JSON
+				return response.json();
+			})
+			.then(data => {
+				console.log(data);
+				// Gọi hàm để cập nhật giao diện với dữ liệu mới nhận được
+				loadCourseManagers(data);
+			})
+			.catch(error => {
+				// Xử lý lỗi nếu có
+				console.error('There has been a problem with your fetch operation:', error);
+			});
+	}
+
+	function loadCourseManagers(courseManagers) {
+		// Tìm phần tử HTML để cập nhật nội dung
+		const appendingManagerList = document.getElementById('appending-manager');
+		const acceptedManagerList = document.getElementById('accepted-manager');
+		const rejectedManagerList = document.getElementById('rejected-manager');
+
+		// Xóa nội dung cũ trước khi cập nhật mới
+		appendingManagerList.innerHTML = '';
+		acceptedManagerList.innerHTML = '';
+		rejectedManagerList.innerHTML = '';
+
+		// Duyệt qua danh sách course managers và tạo HTML để hiển thị thông tin
+		courseManagers.forEach(manager => {
+			// Tạo phần tử li
+			const managerItem = document.createElement('li');
+			managerItem.id = "section-" + manager.CourseManagerId; // Thiết lập id của phần tử li
+
+			// Tạo các phần tử con theo mẫu bạn muốn
+			const leftSideDiv = document.createElement('div');
+			leftSideDiv.classList.add('left', 'side');
+
+			const rightSideDiv = document.createElement('div');
+			rightSideDiv.classList.add('right', 'side');
+
+			const contentDiv = document.createElement('div');
+			contentDiv.classList.add('content', 'content-course');
+
+			const sectionTitle = document.createElement('h3');
+			sectionTitle.classList.add('section-title');
+			sectionTitle.textContent = manager.user; // Thiết lập nội dung của tiêu đề
+
+			const actionButtonsDiv = document.createElement('div');
+			actionButtonsDiv.classList.add('form-inline', 'felement', 'action-buttons');
+
+			const acceptButton = document.createElement('button');
+			acceptButton.classList.add('btn', 'btn-primary');
+			acceptButton.type = 'button';
+			acceptButton.textContent = 'Accept';
+			acceptButton.onclick = function () {
+				updateManager(manager.courseManagerId, true);
+			};
+			if (manager.isStaff === true) {
+				acceptButton.style.display = 'none'; // Ẩn nút Accept nếu manager đã được chấp nhận
+			}
+
+			const rejectButton = document.createElement('button');
+			rejectButton.classList.add('btn', 'btn-secondary');
+			rejectButton.type = 'button';
+			rejectButton.textContent = 'Reject';
+			rejectButton.onclick = function () {
+				updateManager(manager.courseManagerId, false);
+			};
+			if (manager.isStaff === false) {
+				rejectButton.style.display = 'none'; // Ẩn nút Reject nếu manager đã bị từ chối
+			}
+
+			// Thêm các phần tử con vào phần tử div actionButtonsDiv
+			actionButtonsDiv.appendChild(acceptButton);
+			actionButtonsDiv.appendChild(rejectButton);
+
+			// Thêm các phần tử con vào phần tử li
+			contentDiv.appendChild(sectionTitle);
+			contentDiv.appendChild(actionButtonsDiv);
+			managerItem.appendChild(leftSideDiv);
+			managerItem.appendChild(rightSideDiv);
+			managerItem.appendChild(contentDiv);
+
+			// Thêm phần tử li vào danh sách tương ứng
+			if (manager.isStaff === null) {
+				appendingManagerList.appendChild(managerItem);
+			} else if (manager.isStaff === true) {
+				acceptedManagerList.appendChild(managerItem);
+			} else {
+				rejectedManagerList.appendChild(managerItem);
+			}
+		});
+	}
+
+
+	function updateManager(courseManagerId, isStaff) {
+		fetch(url + 'UpdateCourseManager?courseManagerId=' + courseManagerId + '&isStaff=' + isStaff, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				getCourseManagers();
+			})
+			.catch(error => {
+				console.error('There has been a problem with your fetch operation:', error);
+			});
+	}
+
+	function updateAllManagers(courseId, isStaff) {
+		fetch(url + 'UpdateCourseManagerAll?courseId=' + courseId + '&isStaff=' + isStaff, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				getCourseManagers();
+			})
+			.catch(error => {
+				console.error('There has been a problem with your fetch operation:', error);
+			});
+	}
+
+
+	getCourseManagers();
+</script>

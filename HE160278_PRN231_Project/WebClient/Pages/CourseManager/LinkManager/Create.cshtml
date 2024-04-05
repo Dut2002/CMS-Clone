@@ -1,0 +1,99 @@
+﻿@page
+@using System.Security.Claims;
+@model WebClient.Pages.CourseManager.LinkManager.CreateModel
+@{
+}
+
+<div id="page" class="container-fluid">
+	<div id="page-content" class="row">
+		<div id="region-main-box" class="col-12">
+			<section id="region-main">
+				<div class="card">
+					<div class="card-body">
+						<span class="notifications" id="user-notifications"></span>
+						<div role="main">
+							<span id="maincontent"></span><h2>Tạo tài liệu mới</h2>
+							<form autocomplete="off" asp-page="/CourseManager/LinkDocument/Create" method="post" accept-charset="utf-8" id="mform1" class="mform">
+								<div style="display: none;">
+									<input type="hidden" asp-for="Input.UserId" value="@int.Parse(User.FindFirstValue("AccountId"))" />
+									<input type="hidden" asp-for="Input.ContentId" value="@Model.ContentId" />
+								</div>
+								<fieldset class="clearfix collapsible" id="id_moodle">
+									<legend class="ftoggler"></legend>
+									<div class="fcontainer clearfix">
+										<div id="fitem_id_title" class="form-group row  fitem   ">
+											<div class="col-md-3">
+												<span class="float-sm-right text-nowrap">
+													<abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="Required" aria-label="Required"></i></abbr>
+												</span>
+												<label class="col-form-label d-inline " for="id_coursenam">
+													Title
+												</label>
+											</div>
+
+											<div class="col-md-9 form-inline felement" data-fieldtype="text">
+												<input type="text"
+													   class="form-control "
+													   id="id_title"
+													   asp-for="Input.Title"
+													   size="30"
+													   maxlength="100" autocomplete="family-name" required>
+												<span class="form-control-feedback alert-danger" asp-validation-for="Input.Title" id="id_error_title"></span>
+											</div>
+										</div>
+										<div id="fitem_id_linkaddress" class="form-group row  fitem   ">
+											<div class="col-md-3">
+												<span class="float-sm-right text-nowrap">
+													<abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="Required" aria-label="Required"></i></abbr>
+												</span>
+												<label class="col-form-label d-inline " for="id_linkaddress">
+													Link Address
+												</label>
+											</div>
+
+											<div class="col-md-9 form-inline felement" data-fieldtype="text">
+												<input type="text"
+													   class="form-control "
+													   id="id_linkaddress"
+													   asp-for="Input.LinkAddress"
+													   size="30"
+													   maxlength="100" autocomplete="family-name" required>
+												<span class="form-control-feedback alert-danger" asp-validation-for="Input.LinkAddress" id="id_error_linkaddress"></span>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<div id="fgroup_id_buttonar" class="form-group row  fitem femptylabel  " data-groupname="buttonar">
+									<div class="col-md-3">
+										<span class="float-sm-right text-nowrap"></span>
+										<label class="col-form-label d-inline " for="fgroup_id_buttonar"></label>
+									</div>
+									<div class="col-md-9 form-inline felement" data-fieldtype="group">
+
+										<div class="form-group  fitem  ">
+											<label class="col-form-label " for="id_submitbutton"></label>
+											<span data-fieldtype="submit">
+												<input type="submit" class="btn btn-primary" name="submitbutton" id="id_submitbutton" value="Create">
+											</span>
+											<div class="form-control-feedback invalid-feedback" id="id_error_submitbutton"></div>
+										</div>
+
+										<div class="form-group  fitem   btn-cancel">
+											<label class="col-form-label " for="id_cancel"></label>
+											<span data-fieldtype="submit">
+												<input type="reset" class="btn btn-secondary" name="cancel" id="id_cancel" value="Cancel">
+											</span>
+											<div class="form-control-feedback invalid-feedback" id="id_error_cancel"></div>
+										</div>
+										<div class="form-control-feedback invalid-feedback" id="id_error_buttonar">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

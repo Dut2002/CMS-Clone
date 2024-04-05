@@ -1,0 +1,131 @@
+﻿@page
+@model WebClient.Pages.Profile.IndexModel
+@{
+}
+<div id="page" class="container-fluid">
+    <div id="page-content" class="row">
+        <div id="region-main-box" class="col-12">
+            <section id="region-main">
+                <div class="card">
+                    <div class="card-body">
+                        <span class="notifications" id="user-notifications"></span>
+                        <div role="main">
+                            <span id="maincontent"></span><h2>@Model.Input.FirstName @Model.Input.LastName</h2>
+                            <form autocomplete="off" asp-page="/Profile/Index" method="post" accept-charset="utf-8" id="mform1" class="mform">
+                                <div style="display: none;">
+                                    <input type="hidden" name="course" value="1" />
+                                    <input type="hidden" name="id" value="58276" />
+                                    <input type="hidden" name="returnto" value="profile" />
+                                    <input name="id" type="hidden" value="58276" />
+                                    <input name="course" type="hidden" value="1" />
+                                    <input name="timezone" type="hidden" value="99" />
+                                    <input name="mform_isexpanded_id_moodle_picture" type="hidden" value="1" />
+                                    <input name="sesskey" type="hidden" value="wKJO8ccWKH" />
+                                    <input name="_qf__user_edit_form" type="hidden" value="1" />
+                                    <input name="mform_isexpanded_id_moodle" type="hidden" value="1" />
+                                    <input name="mform_isexpanded_id_moodle_additional_names" type="hidden" value="0" />
+                                    <input name="mform_isexpanded_id_moodle_interests" type="hidden" value="0" />
+                                    <input name="mform_isexpanded_id_moodle_optional" type="hidden" value="0" />
+                                </div>
+                                <fieldset class="clearfix collapsible" id="id_moodle">
+                                    <legend class="ftoggler">General</legend>
+                                    <div class="fcontainer clearfix">
+                                        <div id="fitem_id_lastname" class="form-group row  fitem   ">
+                                            <div class="col-md-3">
+                                                <span class="float-sm-right text-nowrap">
+                                                    <abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="Required" aria-label="Required"></i></abbr>
+
+
+                                                </span>
+                                                <label class="col-form-label d-inline " for="id_lastname">
+                                                    Last name
+                                                </label>
+                                            </div>
+                                            <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                                                <input type="text"
+                                                       class="form-control "
+                                                       id="id_lastname"
+                                                       asp-for="Input.LastName"
+                                                       size="30"
+                                                       maxlength="100" autocomplete="family-name" required>
+                                                <span class="form-control-feedback alert-danger" asp-validation-for="Input.FirstName" id="id_error_lastname"></span>
+                                            </div>
+                                        </div>
+                                        <div id="fitem_id_firstname" class="form-group row  fitem   ">
+                                            <div class="col-md-3">
+                                                <span class="float-sm-right text-nowrap">
+                                                    <abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="Required" aria-label="Required"></i></abbr>
+
+
+                                                </span>
+                                                <label class="col-form-label d-inline " for="id_firstname">
+                                                    First name
+                                                </label>
+                                            </div>
+                                            <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                                                <input type="text"
+                                                       class="form-control "
+                                                       id="id_firstname"
+                                                       asp-for="Input.FirstName"
+                                                       size="30"
+                                                       maxlength="100" autocomplete="given-name" required>
+                                                <span class="form-control-feedback alert-danger" asp-validation-for="Input.FirstName" id="id_error_firstname"></span>
+                                            </div>
+                                        </div>
+                                        <div id="fitem_id_email" class="form-group row  fitem   ">
+                                            <div class="col-md-3">
+                                                <span class="float-sm-right text-nowrap">
+                                                    <abbr class="initialism text-danger" title="Required"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="Required" aria-label="Required"></i></abbr>
+
+
+                                                </span>
+                                                <label class="col-form-label d-inline " for="id_email">
+                                                    Email address
+                                                </label>
+                                            </div>
+                                            <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                                                <input type="text"
+                                                       class="form-control "
+                                                       id="id_email"
+                                                       asp-for="Input.Email"
+                                                       size="30"
+                                                       maxlength="100" autocomplete="email" required>
+                                                <span class="form-control-feedback alert-danger" asp-validation-for="Input.Email" id="id_error_email"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div id="fgroup_id_buttonar" class="form-group row  fitem femptylabel  " data-groupname="buttonar">
+                                    <div class="col-md-3">
+                                        <span class="float-sm-right text-nowrap"></span>
+                                        <label class="col-form-label d-inline " for="fgroup_id_buttonar"></label>
+                                    </div>
+                                    <div class="col-md-9 form-inline felement" data-fieldtype="group">
+
+                                        <div class="form-group  fitem  ">
+                                            <label class="col-form-label " for="id_submitbutton"></label>
+                                            <span data-fieldtype="submit">
+                                                <input type="submit" class="btn btn-primary" name="submitbutton" id="id_submitbutton" value="Update profile">
+                                            </span>
+                                            <div class="form-control-feedback invalid-feedback" id="id_error_submitbutton"></div>
+                                        </div>
+
+                                        <div class="form-group  fitem   btn-cancel">
+                                            <label class="col-form-label " for="id_cancel"></label>
+                                            <span data-fieldtype="submit">
+                                                <input type="reset" class="btn btn-secondary" name="cancel" id="id_cancel" value="Cancel">
+                                            </span>
+                                            <div class="form-control-feedback invalid-feedback" id="id_error_cancel"></div>
+                                        </div>
+                                        <div class="form-control-feedback invalid-feedback" id="id_error_buttonar">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

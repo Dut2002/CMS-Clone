@@ -1,0 +1,168 @@
+﻿@page
+@model WebClient.Pages.CourseManager.DetailModel
+@{
+}
+
+<div b-fxb6eae6jp="" id="wrapper">
+	<div b-fxb6eae6jp="" id="page-content-wrapper">
+		<main b-fxb6eae6jp="" role="main">
+
+			<div id="page-content" class="row">
+				<div class="card content-card">
+					<div class="card-body">
+						<span class="notifications" id="user-notifications"></span>
+						<div role="main">
+							<span id="maincontent"></span>
+							<div class="course-content">
+								<div id="completionprogressid" class="completionprogress">
+									<div>
+										@Model.Course.CourseName - @Model.Course.Semester @Model.Course.Year - @Model.Course.Creator - @Model.Course.SubjectName -
+										<a class="btn btn-primary" asp-page="/CourseManager/Section/Create" asp-route-courseId="@Model.Course.CourseId">Tạo Nội Dung Mới</a>
+
+									</div>
+									<div>
+										<a class="btn btn-primary" asp-page="/CourseManagement/Index" asp-route-courseId="@Model.Course.CourseId">Quản lý Nội Dung</a>
+									</div>
+								</div>
+								<h2 class="accesshide">Weekly outline</h2><ul class="weeks">
+									@* 											<li id="section-0" class="section main clearfix" role="region" aria-label="General">
+									<span class="hidden sectionname">General</span>
+									<div class="left side"></div>
+									<div class="right side">
+									<img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/spacer">
+									</div>
+									<div class="content">
+									<h3 class="sectionname accesshide">
+									<span>
+									<a href="https://cmshn.fpt.edu.vn/course/view.php?id=4267#section-0">General</a>
+									</span>
+									</h3><div class="section_availability">
+									</div>
+									<div class="summary"></div>
+									<ul class="section img-text">
+									<li class="activity forum modtype_forum " id="module-134734">
+									<div>
+									<div class="mod-indent-outer">
+									<div class="mod-indent">																	</div>
+									<div>
+									<div class="activityinstance">
+									<a class="" onclick="" href="https://cmshn.fpt.edu.vn/mod/forum/view.php?id=134734">
+									<img src="https://cmshn.fpt.edu.vn/theme/image.php/trema/forum/1697438386/icon" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true">
+									<span class="instancename">
+									Announcements
+									<span class="accesshide "> Forum</span>
+									</span>
+									</a>
+									</div>
+									</div>
+									</div>
+									</div>
+									</li>
+									<li class="activity url modtype_url " id="module-147940">
+									<div>
+									<div class="mod-indent-outer">
+									<div class="mod-indent"></div>
+									<div>
+									<div class="activityinstance">
+									<a class="" onclick="" href="https://cmshn.fpt.edu.vn/mod/url/view.php?id=147940">
+									<img src="https://cmshn.fpt.edu.vn/theme/image.php/trema/url/1697438386/icon" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true">
+									<span class="instancename">Syllabus, Material<span class="accesshide "> URL</span></span>
+									</a>
+									</div><span class="actions">
+									<form method="post" action="https://cmshn.fpt.edu.vn/course/togglecompletion.php" class="togglecompletion">
+									<div>
+									<input type="hidden" name="id" value="147940">
+									<input type="hidden" name="sesskey" value="Fdb5nAyAOz">
+									<input type="hidden" name="modulename" value="Syllabus, Material">
+									<input type="hidden" name="completionstate" value="1">
+									<button class="btn btn-link" aria-live="assertive">
+									<img class="icon " alt="Not completed: Syllabus, Material. Select to mark as complete." title="Not completed: Syllabus, Material. Select to mark as complete." src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/i/completion-manual-n">
+									</button>
+									</div>
+									</form>
+									</span>
+									</div>
+									</div>
+									</div>
+									</li>
+									<li class="activity resource modtype_resource " id="module-160613">
+									<div>
+									<div class="mod-indent-outer">
+									<div class="mod-indent">
+									</div>
+									<div>
+									<div class="activityinstance">
+									<a class="" onclick="" href="https://cmshn.fpt.edu.vn/mod/resource/view.php?id=160613">
+									<img src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/f/archive-24" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true">
+									<span class="instancename">
+									PRN211 Resourse
+									<span class="accesshide "> File</span>
+									</span>
+									</a>
+									<span class="resourcelinkdetails">12.5KB Archive (RAR) Uploaded 27/02/24, 08:57</span>
+									</div>
+									<span class="actions">
+									<form method="post" action="https://cmshn.fpt.edu.vn/course/togglecompletion.php" class="togglecompletion">
+									<div>
+									<input type="hidden" name="id" value="160613">
+									<input type="hidden" name="sesskey" value="Fdb5nAyAOz">
+									<input type="hidden" name="modulename" value="PRN211 Resourse">
+									<input type="hidden" name="completionstate" value="1">
+									<button class="btn btn-link" aria-live="assertive">
+									<img class="icon " alt="Not completed: PRN211 Resourse. Select to mark as complete." title="Not completed: PRN211 Resourse. Select to mark as complete." src="https://cmshn.fpt.edu.vn/theme/image.php/trema/core/1697438386/i/completion-manual-n">
+									</button>
+									</div>
+									</form>
+									</span>
+									</div>
+									</div>
+									</div>
+									</li>
+									</ul>
+									</div>
+									</li>
+									*@
+									@if (Model.Course.ContentCourses.Any())
+									{
+										foreach (var content in Model.Course.ContentCourses)
+										{
+											<li id="section-1" class="section main section-summary clearfix" role="region" aria-label="1 January - 7 January">
+												<div class="left side"></div>
+												<div class="right side"></div>
+												<div class="content content-course">
+													<h3 class="section-title">
+														<a asp-page="/CourseManager/Section/Index" asp-route-contentId="@content.ContentId" class="">@content.Title</a>
+													</h3>
+													<div class="form-inline felement" data-fieldtype="group">
+														<a href="/CourseManager/Section/Update?contentId=@content.ContentId" class="btn btn-primary">Update</a>
+
+														<form asp-page="/CourseManager/Detail" id="deleteForm-@content.ContentId" method="post">
+															<input type="hidden" value="@content.ContentId" name="contentId" />
+															<input type="hidden" value="@Model.Course.CourseId" name="courseId" />
+															<button class="btn btn-secondary" onclick="confirmDelete(@content.ContentId)" type="button">Delete</button>
+														</form>
+													</div>
+												</div>
+											</li>
+										}
+									}
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+	</div>
+</div>
+
+<script>
+	function confirmDelete(contentId) {
+		if (confirm("Bạn có chắc chắn muốn xóa nội dung học này?")) {
+			document.getElementById("deleteForm-"+contentId).submit();
+		}
+	}
+</script>

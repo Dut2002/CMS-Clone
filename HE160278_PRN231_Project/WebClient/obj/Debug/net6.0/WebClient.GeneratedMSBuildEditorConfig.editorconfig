@@ -1,0 +1,169 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebClient
+build_property.RootNamespace = WebClient
+build_property.ProjectDir = D:\Study\2024_1_Spring\PRN231\Project\CMS-Clone\HE160278_PRN231_Project\WebClient\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Study\2024_1_Spring\PRN231\Project\CMS-Clone\HE160278_PRN231_Project\WebClient
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManagement/AdminCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlbWVudFxBZG1pbkNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManagement/Enroll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlbWVudFxFbnJvbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManagement/MyManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlbWVudFxNeU1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/DocumentManager/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxEb2N1bWVudE1hbmFnZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/DocumentManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxEb2N1bWVudE1hbmFnZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/DocumentManager/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxEb2N1bWVudE1hbmFnZXJcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/DownloadFileManager/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxEb3dubG9hZEZpbGVNYW5hZ2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/LinkManager/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxMaW5rTWFuYWdlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Section/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxTZWN0aW9uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Section/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxTZWN0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Section/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxTZWN0aW9uXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/CourseManager/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTWFuYWdlclxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Home/Enrol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFbnJvbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Home/SubjectList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxTdWJqZWN0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/2024_1_Spring/PRN231/Project/CMS-Clone/HE160278_PRN231_Project/WebClient/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fxb6eae6jp
